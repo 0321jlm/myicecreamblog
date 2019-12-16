@@ -1,0 +1,929 @@
+  [1m[35m (148.8ms)[0m  [1m[35mCREATE DATABASE "icecream_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (60.5ms)[0m  [1m[35mCREATE DATABASE "icecream_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2560118659004215155)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogs (20191214151359)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "category" character varying, "blogEntry" text, "author" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191214151359"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-14 15:18:06.152962"], ["updated_at", "2019-12-14 15:18:06.152962"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2560118659004215155)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.8ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"quia\", \"veniam\", \"consequuntur\"]"], ["blogEntry", "Iusto ut quam. Neque cum vero. Excepturi quia ratione."], ["author", "Johnson Jast"], ["created_at", "2019-12-14 15:52:17.480010"], ["updated_at", "2019-12-14 15:52:17.480010"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"quibusdam\", \"quisquam\", \"natus\"]"], ["blogEntry", "Quis harum earum. Enim sequi quo. Ex deleniti ut."], ["author", "Sonny Stokes"], ["created_at", "2019-12-14 15:52:17.483758"], ["updated_at", "2019-12-14 15:52:17.483758"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"officia\", \"dolores\", \"voluptas\"]"], ["blogEntry", "Cumque pariatur aut. Modi inventore quia. Est velit ab."], ["author", "Ms. Dustin West"], ["created_at", "2019-12-14 15:52:17.486434"], ["updated_at", "2019-12-14 15:52:17.486434"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"qui\", \"nihil\", \"vitae\"]"], ["blogEntry", "Tempore culpa dolor. Praesentium molestiae voluptatibus. Consequatur nobis similique."], ["author", "Daphine Kreiger"], ["created_at", "2019-12-14 15:52:17.489023"], ["updated_at", "2019-12-14 15:52:17.489023"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"ducimus\", \"labore\", \"pariatur\"]"], ["blogEntry", "Ipsa nostrum non. Labore quod voluptas. Suscipit impedit quia."], ["author", "Tricia Veum"], ["created_at", "2019-12-14 15:52:17.491514"], ["updated_at", "2019-12-14 15:52:17.491514"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-12-14 10:52:35 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jessmadeux/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jessmadeux/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 480)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 2610)
+
+
+Started GET "/blogs" for ::1 at 2019-12-14 10:52:37 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 5.2ms | Allocations: 5935)
+
+
+Started GET "/blogs" for ::1 at 2019-12-14 20:14:30 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 3.8ms | Allocations: 5931)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:07:56 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 4.1ms | Allocations: 5927)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:11:24 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1478)
+
+
+Started DELETE "/blogs/1" for 127.0.0.1 at 2019-12-16 10:11:31 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.3ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 1.3ms | Allocations: 3760)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:11:31 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1342)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:13:47 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1342)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "tempora"], ["blogEntry", "Magni quasi pariatur. A velit cumque. Qui corporis illo."], ["author", "Dr. Isreal Kuhic"], ["created_at", "2019-12-16 15:21:31.817772"], ["updated_at", "2019-12-16 15:21:31.817772"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "cumque"], ["blogEntry", "Ex consequatur et. Nam voluptatem similique. Minus cumque sapiente."], ["author", "Dong Farrell"], ["created_at", "2019-12-16 15:21:31.821258"], ["updated_at", "2019-12-16 15:21:31.821258"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "nulla"], ["blogEntry", "Asperiores incidunt illo. Quis aspernatur ab. Dolorem sunt aut."], ["author", "Hilma Dicki"], ["created_at", "2019-12-16 15:21:31.823924"], ["updated_at", "2019-12-16 15:21:31.823924"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "omnis"], ["blogEntry", "Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium."], ["author", "Mercedez Stoltenberg"], ["created_at", "2019-12-16 15:21:31.826532"], ["updated_at", "2019-12-16 15:21:31.826532"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "sequi"], ["blogEntry", "Voluptas et in. Ea autem repellendus. A aut impedit."], ["author", "Mr. Milagros Toy"], ["created_at", "2019-12-16 15:21:31.836348"], ["updated_at", "2019-12-16 15:21:31.836348"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:21:54 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 3.3ms | Allocations: 6460)
+
+
+Started DELETE "/blogs/2" for 127.0.0.1 at 2019-12-16 10:22:01 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.3ms | Allocations: 2675)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:22:01 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1872)
+
+
+Started DELETE "/blogs/3" for 127.0.0.1 at 2019-12-16 10:22:03 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 1.1ms | Allocations: 2215)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:22:03 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1737)
+
+
+Started DELETE "/blogs/4" for 127.0.0.1 at 2019-12-16 10:22:04 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 1.1ms | Allocations: 2197)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:22:04 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1583)
+
+
+Started DELETE "/blogs/5" for 127.0.0.1 at 2019-12-16 10:22:06 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 1.2ms | Allocations: 2197)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:22:06 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1448)
+
+
+Started PUT "/blogs/6" for 127.0.0.1 at 2019-12-16 10:22:14 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"", "blogEntry"=>"", "author"=>"", "id"=>"6", "blog"=>{"id"=>"6", "category"=>"", "blogEntry"=>"", "author"=>""}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "category" = $1, "blogEntry" = $2, "author" = $3, "updated_at" = $4 WHERE "blogs"."id" = $5[0m  [["category", ""], ["blogEntry", ""], ["author", ""], ["updated_at", "2019-12-16 15:22:14.116413"], ["id", 6]]
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 3074)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:22:14 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1446)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:23:08 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1447)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:26:49 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1446)
+
+
+Started POST "/blogs" for 127.0.0.1 at 2019-12-16 10:27:50 -0500
+Processing by BlogsController#create as HTML
+  Parameters: {"category"=>"Flavors", "blogEntry"=>"Strawberry is my favorite ice cream.", "author"=>"Jess Madeux", "blog"=>{"category"=>"Flavors", "blogEntry"=>"Strawberry is my favorite ice cream.", "author"=>"Jess Madeux"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "Flavors"], ["blogEntry", "Strawberry is my favorite ice cream."], ["author", "Jess Madeux"], ["created_at", "2019-12-16 15:27:50.624803"], ["updated_at", "2019-12-16 15:27:50.624803"]]
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+Completed 201 Created in 5ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2490)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:27:50 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:29:04 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:30:01 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:30:56 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:31:44 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:34:21 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1579)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:41:15 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 5275)
+
+
+Started PUT "/blogs/11" for 127.0.0.1 at 2019-12-16 10:41:29 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"", "blogEntry"=>"", "author"=>"", "id"=>"11", "blog"=>{"id"=>"11", "category"=>"", "blogEntry"=>"", "author"=>""}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "category" = $1, "blogEntry" = $2, "author" = $3, "updated_at" = $4 WHERE "blogs"."id" = $5[0m  [["category", ""], ["blogEntry", ""], ["author", ""], ["updated_at", "2019-12-16 15:41:29.577805"], ["id", 11]]
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 3061)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:41:29 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1411)
+
+
+Started DELETE "/blogs/11" for 127.0.0.1 at 2019-12-16 10:41:41 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 1.1ms | Allocations: 2197)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:41:41 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1280)
+
+
+Started DELETE "/blogs/6" for 127.0.0.1 at 2019-12-16 10:41:43 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 1.0ms | Allocations: 2197)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:41:43 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:43:25 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:50:46 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1226)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:54:08 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:55:33 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/Blog.js" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Blog.js"):
+  
+actionpack (6.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/src/index.js" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+Started GET "/App.js" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+Started GET "/Blogs.js" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+Started GET "/Main.js" for 127.0.0.1 at 2019-12-16 10:57:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/src/index.js"):
+  
+actionpack (6.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/Blogs.js"):
+  
+actionpack (6.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/Main.js"):
+  
+actionpack (6.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/App.js"):
+  
+actionpack (6.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 10:59:28 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1225)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:00:02 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:00:38 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:09:21 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1226)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:10:32 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:24:55 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1226)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:37:10 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1227)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:38:19 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1149)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:38:51 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 1149)
+
+
+Started DELETE "/blogs/10" for 127.0.0.1 at 2019-12-16 11:38:58 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 1.4ms | Allocations: 2224)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:38:58 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:50:25 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 1092)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:55:54 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 11:56:13 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 975)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 11:56:13 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:05:42 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 3.5ms | Allocations: 5509)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 12:05:50 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1501)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:05:50 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1034)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 12:29:02 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg"}}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1061)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:29:02 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1036)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:31:37 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:32:05 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:32:13 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (2.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 1017)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:32:38 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 12:36:30 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:40:50 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 1092)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 13:40:59 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 975)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:40:59 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:41:49 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 4.3ms | Allocations: 5487)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 13:41:56 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"omnis", "blogEntry"=>"Atque consequuntur eveniet. Distinctio est enim. Ea consequatur laudantium.", "author"=>"Mercedez Stoltenberg"}}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2586)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:41:56 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1034)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:42:50 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1034)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:47:58 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:48:05 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:48:52 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:50:22 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1034)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:50:41 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (2.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 1015)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:51:40 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 13:52:07 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"Strawberry", "blogEntry"=>"Is my Favorite", "author"=>"Jess Madeux", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"Strawberry", "blogEntry"=>"Is my Favorite", "author"=>"Jess Madeux"}}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "category" = $1, "blogEntry" = $2, "author" = $3, "updated_at" = $4 WHERE "blogs"."id" = $5[0m  [["category", "Strawberry"], ["blogEntry", "Is my Favorite"], ["author", "Jess Madeux"], ["updated_at", "2019-12-16 18:52:07.193588"], ["id", 9]]
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:29:in `update'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2976)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:52:07 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1013)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 13:53:21 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 1013)
+
+
+Started GET "/blogs" for ::1 at 2019-12-16 14:14:11 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1090)
+
+
+Started PUT "/blogs/9" for 127.0.0.1 at 2019-12-16 14:18:21 -0500
+Processing by BlogsController#update as HTML
+  Parameters: {"category"=>"Strawberry", "blogEntry"=>"Is my Favorite", "author"=>"Jess Madeux", "id"=>"9", "blog"=>{"id"=>"9", "category"=>"Strawberry", "blogEntry"=>"Is my Favorite", "author"=>"Jess Madeux"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 972)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 14:18:21 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1013)
+
+
+Started POST "/blogs" for 127.0.0.1 at 2019-12-16 14:19:41 -0500
+Processing by BlogsController#create as HTML
+  Parameters: {"category"=>"Flavors", "blogEntry"=>"tj;alhksed;kfjal;k,mads ajflkjdas;lkfa ; afldskfja;ksjd asd f a;kjld,m,a;dlkjfkla,dm;kjkm.", "author"=>"Jess Madeux", "blog"=>{"category"=>"Flavors", "blogEntry"=>"tj;alhksed;kfjal;k,mads ajflkjdas;lkfa ; afldskfja;ksjd asd f a;kjld,m,a;dlkjfkla,dm;kjkm.", "author"=>"Jess Madeux"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+  [1m[36mBlog Create (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "Flavors"], ["blogEntry", "tj;alhksed;kfjal;k,mads ajflkjdas;lkfa ; afldskfja;ksjd asd f a;kjld,m,a;dlkjfkla,dm;kjkm."], ["author", "Jess Madeux"], ["created_at", "2019-12-16 19:19:41.845140"], ["updated_at", "2019-12-16 19:19:41.845140"]]
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:20:in `create'
+Completed 201 Created in 7ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 2493)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 14:19:41 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1147)
+
+
+Started DELETE "/blogs/12" for 127.0.0.1 at 2019-12-16 14:19:50 -0500
+Processing by BlogsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:44:in `set_blog'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:38:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.1ms | Allocations: 2218)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 14:19:50 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1013)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 14:22:19 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1013)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2019-12-16 14:27:38 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1013)
+
+
