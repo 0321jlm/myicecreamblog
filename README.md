@@ -1,24 +1,28 @@
-# README
+# Ice Cream Connoisseur
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## SEI Triforce Boot Camp Final Project
 
-Things you may want to cover:
+An application to share information pertaining to ice cream.
 
-* Ruby version
+### Developer
 
-* System dependencies
+Jess Madeux
+December 2019
 
-* Configuration
+### Backend URL
 
-* Database creation
+https://icecreamblog.herokuapp.com
 
-* Database initialization
+### Technologies
 
-* How to run the test suite
+Rails
+Ruby
+Postgresql
+Axios
+CORS
 
-* Services (job queues, cache servers, search engines, etc.)
+### Credits
 
-* Deployment instructions
-
-* ...
+Stack Overflow https://stackoverflow.com/
+Heroku https://heroku.com
+MDN web docs https://developer.mozilla.org/en-US/
